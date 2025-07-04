@@ -51,11 +51,14 @@
 \tikzset{cardfrontpattern/.pic={
 	\setmainfont[Scale=6.0]{Roboto Slab}
 	\node (c) at (0, 0) {{\LARGE #1}};
-	\node (ul) at (-0.9, 1.4) {{\tiny #1}};
-	\node[transform shape, rotate=180] (lr) at (0.9, -1.4) {{\tiny #1}};
+%	\node (ul) at (-0.9, 1.4) {{\tiny #1}};
+%	\node[transform shape, rotate=180] (lr) at (0.9, -1.4) {{\tiny #1}};
 	
-	\draw[line width=0.25ex, rounded corners=3mm] (ul) --++ (1.8, 0) -- (lr);
-	\draw[line width=0.25ex, rounded corners=3mm] (lr) --++ (-1.8, 0) -- (ul);
+%	\draw[line width=0.25ex, rounded corners=3mm] (ul) --++ (1.8, 0) -- (lr);
+%	\draw[line width=0.25ex, rounded corners=3mm] (lr) --++ (-1.8, 0) -- (ul);
+	
+	\draw[line width=0.25ex, rounded corners=3mm] (0,1.4) --++ (0.9, 0) --++ (0, -2.8) --++ (-1.8,0) --++ (0,2.8) -- cycle;
+
 
 }}
 
@@ -64,9 +67,9 @@
 	\pic () at (0,0) {cardfrontpattern={#1}};	
 	\LARGE
 	\node[fill=black, inner sep = 0pt, minimum width = 0.4em, minimum height = 0.2ex] () at (0, -0.75) {};
-	\tiny
-	\node[fill=black, inner sep = 0pt, minimum width = 0.4em, minimum height = 0.2ex] () at (-0.90, 1.4in-1ex) {};
-	\node[fill=black, inner sep = 0pt, minimum width = 0.4em, minimum height = 0.2ex, rotate=180] () at (0.90, -1.4in+1ex) {};
+%	\tiny
+%	\node[fill=black, inner sep = 0pt, minimum width = 0.4em, minimum height = 0.2ex] () at (-0.90, 1.4in-1ex) {};
+%	\node[fill=black, inner sep = 0pt, minimum width = 0.4em, minimum height = 0.2ex, rotate=180] () at (0.90, -1.4in+1ex) {};
 
 }}
 
@@ -81,7 +84,7 @@
 	% Pattern for card back
 	\pic () at (0,0) {cardbackpattern={#1}};
 	% Cutting guides for corners of the cards	
-	\pic () at (0,0) {cutguide={black}};
+	\pic () at (0,0) {cutguide={white}};
 \end{scope}
 }}
 
@@ -97,7 +100,7 @@
 	% Pattern for card front
 	\pic () at (0,0) {cardfrontpattern={#1}};
 	% Cutting guides for corners of the cards	
-	\pic () at (0,0) {cutguide={white}};
+	\pic () at (0,0) {cutguide={black}};
 \end{scope}
 }}
 
@@ -112,6 +115,6 @@
 	% Pattern for card front
 	\pic () at (0,0) {cardfrontpatternunderline={#1}};
 	% Cutting guides for corners of the cards	
-	\pic () at (0,0) {cutguide={white}};
+	\pic () at (0,0) {cutguide={black}};
 \end{scope}
 }}
