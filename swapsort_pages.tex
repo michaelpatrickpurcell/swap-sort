@@ -1,0 +1,126 @@
+\documentclass[a6paper, parskip=half, DIV=14, 10pt]{scrartcl}
+\usepackage{swapsort}
+\usepackage{booktabs}
+\usepackage{multicol}
+\setlength\columnsep{3em}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{scrlayer-scrpage} % Manage headers and footers in Koma-Script document classes
+\setlength{\footskip}{1cm}
+
+\usepackage[type={CC}, version={4.0}, modifier={by}]{doclicense} % Add text and icons for creative commons license
+\usepackage{array}
+\usepackage{afterpage}
+
+\usepackage[hidelinks]{hyperref} % Add hyperlinks to the pdf file. This should usually be the last package loaded before \begin{document}
+
+\setmainfont{Roboto}
+\makeatletter
+\newcommand{\version}[1]{\newcommand{\@version}{#1}}
+\makeatother
+
+% Set header
+\clearpairofpagestyles
+\makeatletter
+\cfoot*{\normalshape Version \@version}
+\makeatother
+
+% Minimize unwanted hyphenation
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+\setkomafont{section}{\setmainfont{Roboto Slab}\Large\bfseries}
+\setkomafont{subsection}{\setmainfont{Roboto Slab}\large\bfseries}
+\setkomafont{subsubsection}{\setmainfont{Roboto Slab}\normalsize\bfseries}
+\setkomafont{descriptionlabel}{\setmainfont{Roboto}\normalsize\bfseries}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=1ex,
+  afterskip=0ex,
+]{section}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=1ex,
+  afterskip=0ex,
+]{subsection}
+
+\RedeclareSectionCommand[
+  runin=false,
+  afterindent=false,
+  beforeskip=1ex,
+  afterskip=0ex,
+]{subsubsection}
+
+\newcommand{\textRN}[1]{{\setmainfont{Roboto Slab} \RomanNumeral{#1}}}
+
+\newcommand{\card}[1]{{\setmainfont{Roboto Slab} #1}}
+
+\version{1.0}
+\begin{document}
+\setmainfont{Roboto}%
+\raggedright%
+
+\begin{center}
+{
+\setmainfont[Scale=1.65]{Roboto Slab-Bold}
+\Huge
+SWAP SORT
+}
+\end{center}
+
+\section*{Overview}
+This is a cooperative game for three to six players.\\It can be played in about ten minutes and is intended for players who are at least eight years old.
+
+\section*{Components}
+\begin{description}[leftmargin=0pt, labelsep=\widthof{\ }]
+	\item[Numbered Cards (18) \textendash] One card for each whole number between one and eighteen.
+\end{description}
+
+\section*{Setup}
+\begin{enumerate}[leftmargin=*]
+	\item Shuffle all of the cards together. 
+	\item Deal one card face down to each player. Everyone should look at their card and add it to their hand. 
+	\item Place six cards face down in a single row in the middle of the table. 
+	\item Discard the remaining cards. Do not look at their faces. You won't use these cards during the game.
+	\item Randomly choose a player to go first. Thereafter, play proceeds to the left (i.e. clockwise).
+\end{enumerate}
+
+\newpage
+
+\section*{Playing the Game}
+Sort the cards on the table into either ascending or descending order.
+To do so, take turns swapping the card in your hand with a card on the table.
+
+Cards are always placed on the table face down.\\
+You may not look at the face of any card on the table.
+You may look at the face of the card in your hand.
+
+Communication between players is strictly limited.\\In particular, you may never speak during the game.
+You may only communicate by indicating whether you believe the cards on the table have been sorted.
+This should be done using a simple nonverbal signal such as a ``thumbs up'' gesture.
+
+The game ends when everyone indicates that they believe the cards have been sorted.
+
+To see if you are correct, turn all of the cards on the table face up.
+If the cards on the table have indeed been sorted, you win!
+Otherwise, you lose.
+
+
+
+
+\vfill
+\hrulefill
+
+\textbf{Game Design}: Michael Purcell\\
+\textbf{Contact}: \href{mailto:mike@armiger.games}{mike@armiger.games}\\
+\begin{tabular}{@{}m{\columnwidth-\widthof{\Huge{\doclicenseIcon}}-0.5cm}@{\hspace{0.05cm}}m{\widthof{\Huge{\doclicenseIcon}}}@{}}
+{\textbf{License}: This work is licensed\newline under a ``CC BY 4.0'' license.} & \Huge{\doclicenseIcon}\\
+\end{tabular}
+
+\end{document}
